@@ -1,4 +1,11 @@
-import { House, BookCopy, BookPlus, Settings, UserPen } from "lucide-react";
+import {
+  House,
+  BookCopy,
+  BookPlus,
+  Settings,
+  UserPlus,
+  UserCheck,
+} from "lucide-react";
 
 function NavBar({ mudarPagina }) {
   const menu = [
@@ -12,8 +19,13 @@ function NavBar({ mudarPagina }) {
     { id: "ajustes", icon: <Settings size={20} />, label: "Ajustes" },
     {
       id: "cadastrarUsuario",
-      icon: <UserPen size={20} />,
-      label: "Cadastrar Usuário",
+      icon: <UserPlus size={20} />,
+      label: "Cadastro de Usuário",
+    },
+    {
+      id: "loginUsuario",
+      icon: <UserCheck size={20} />,
+      label: "Login de Usuário",
     },
   ];
 

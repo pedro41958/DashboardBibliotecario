@@ -13,12 +13,12 @@ function ListarLivros() {
 
   return (
     <>
-      <div className="grid col-span-5 w-full h-full bg-gray-900 p-20 grid-rows-6 pt-30 gap-20">
+      <div className="grid col-span-5 w-full h-full bg-gray-900 p-20 pt-30">
         <h1 className="text-cyan-300 font-bold text-3xl row-span-1">
           DASHBOARD DO BIBLIOTECÁRIO
         </h1>
 
-        <div className="bg-cyan-950 p-5 rounded border-t-3 border-t-lime-300">
+        <div className="bg-cyan-950 p-5 rounded border-t-3 border-t-lime-300 h-fit">
           <div className="flex justify-between mb-5">
             <h2 className="text-white font-semibold">Acervo de Livros</h2>
             <h3 className="text-lime-300 font-semibold">

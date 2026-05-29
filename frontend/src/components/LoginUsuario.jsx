@@ -2,13 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 
 function CadastrarUsuario() {
-  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   function handleSubmit() {
     const { data } = axios.post("http://localhost:3000/cadastrarUsuario", {
-      nome: nome,
       email: email,
       senha: senha,
     });
@@ -18,20 +16,12 @@ function CadastrarUsuario() {
 
   return (
     <div className="grid col-span-5 w-full h-full bg-gray-900 p-20 grid-rows-6 pt-30">
-      <h1 className="text-cyan-300 font-bold text-3xl row-span-1">CADASTRO</h1>
+      <h1 className="text-cyan-300 font-bold text-3xl row-span-1">LOGIN</h1>
       <div className="flex flex-col items-center row-span-5 h-full">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center bg-cyan-950 rounded border-t-3 border-t-lime-300 gap-5 text-white font-semibol h-2/3 w-1/3 font-semibold"
         >
-          <label className="flex flex-col justify-center items-center">
-            Nome
-            <input
-              type="text"
-              className="bg-white p-1 rounded text-gray-800"
-              onChange={(e) => setNome(e.target.value)}
-            />
-          </label>
           <label className="flex flex-col justify-center items-center">
             Email
             <input
@@ -52,7 +42,7 @@ function CadastrarUsuario() {
             className="bg-white w-auto p-2 cursor-pointer text-gray-900 rounded mt-15 hover:bg-gray-200"
             type="submit"
           >
-            CADASTRAR
+            ENTRAR
           </button>
         </form>
       </div>

@@ -1,7 +1,8 @@
+import { useState } from "react";
 import NavBar from "./components/NavBar";
 import ListarLivros from "./components/ListarLivros";
-import { useState } from "react";
 import CadastrarUsuario from "./components/CadastrarUsuario";
+import LoginUsuario from "./components/LoginUsuario";
 
 function App() {
   const [paginaAtiva, setPaginaAtiva] = useState("listarLivros");
@@ -11,6 +12,8 @@ function App() {
       return <ListarLivros />;
     } else if (paginaAtiva === "cadastrarUsuario") {
       return <CadastrarUsuario />;
+    } else if (paginaAtiva === "loginUsuario") {
+      return <LoginUsuario />;
     }
   }
 
