@@ -23,18 +23,14 @@ exports.cadastarUsuario = async (req, res) => {
 exports.loginUsuario = async (req, res) => {
   const { email, senha } = req.body;
 
-  async function buscarUsuario() {
-    const [rows] = await db.query("SELECT * FROM usuarios");
-    return rows;
-  }
-
-  const usuario = buscarUsuario.json();
-
-  usuario.find((u) => u.email === email);
-
-  if (!usuario) return res.status(401).send("Usuário não encontrado!");
-
+  console.log(req.body);
+  
   try {
+    const [rows] = await db.query("SELECT * FROM usuarios WHERE email = ?", [email]);
+    
+    const usuario = rows[0]
+  
+    if (!usuario) return res.status(401).send("Usuário não encontrado!");
     const senhaHash = await bcrypt.compare(senha, usuario.senha);
 
     if (senhaHash) {
