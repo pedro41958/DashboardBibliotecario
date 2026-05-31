@@ -5,13 +5,23 @@ function CadastrarUsuario() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  function handleSubmit() {
-    const { data } = axios.post("http://localhost:3000/cadastrarUsuario", {
-      email: email,
-      senha: senha,
-    });
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-    return { data };
+    try {
+      const resposta = await axios.post("http://localhost:3000/login", {
+        email,
+        senha,
+      });
+
+      const token = resposta.data.token;
+
+      localStorage.setItem("token", token);
+
+      alert("Login realizado!");
+    } catch (error) {
+      alert("Erro ao fazer login");
+    }
   }
 
   return (
