@@ -9,7 +9,7 @@ function CadastrarUsuario() {
     e.preventDefault();
 
     try {
-      const resposta = await axios.post("http://localhost:3000/login", {
+      const resposta = await axios.post("http://localhost:3000/loginUsuario", {
         email,
         senha,
       });
